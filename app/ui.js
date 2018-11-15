@@ -1064,8 +1064,7 @@ const UI = {
             UI.reconnect_callback = null;
         }
 
-        UI.
-        ('disconnected');
+        UI.updateVisualState('disconnected');
 
         UI.openControlbar();
         UI.openConnectPanel();
