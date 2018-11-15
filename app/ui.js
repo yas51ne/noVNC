@@ -95,11 +95,11 @@ const UI = {
 
         UI.openControlbar();
 
-        UI.updateVisualState('init');
+        UI.updateVisualState('connecting');
 
         document.documentElement.classList.remove("noVNC_loading");
 
-        let autoconnect = WebUtil.getConfigVar('autoconnect', false);
+        let autoconnect = WebUtil.getConfigVar('autoconnect', true);
         if (autoconnect === 'true' || autoconnect == '1') {
             autoconnect = true;
             UI.connect();
@@ -162,7 +162,7 @@ const UI = {
         UI.initSetting('path', 'websockify');
         UI.initSetting('repeaterID', '');
         UI.initSetting('reconnect', false);
-        UI.initSetting('reconnect_delay', 5000);
+        UI.initSetting('reconnect_delay', 0);
 
         UI.setupSettingLabels();
     },
@@ -1040,7 +1040,7 @@ const UI = {
         UI.connected = false;
 
         // Disable automatic reconnecting
-        UI.inhibit_reconnect = true;
+        UI.inhibit_reconnect = false;
 
         UI.updateVisualState('disconnecting');
 
@@ -1064,7 +1064,8 @@ const UI = {
             UI.reconnect_callback = null;
         }
 
-        UI.updateVisualState('disconnected');
+        UI.
+        ('disconnected');
 
         UI.openControlbar();
         UI.openConnectPanel();
